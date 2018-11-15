@@ -40,7 +40,7 @@
     <div class="container" action="server.php">
     <div class="row login">
         <div class="col s12 14 offset-14 center-alignment">
-            <form class="form" action="form.php" method="post">
+            <form class="form" action="login.php" method="post">
                 <?php include('errors.php'); ?>
                 <div class="card">
                     <div class="card-action red white-text">
@@ -57,11 +57,11 @@
                         
                         <div class="form-field">
                             <label for ="password">Password</label>
-                            <input type="password" id="password">
+                            <input type="password" name= "password" id="password">
                         </div><br>
                         
                         <div class="form-field center-alignment">
-                            <buttontype="submit" name="login_user" class="btn-large red">Login</button>
+                            <button type="submit" name="login_user" class="btn-large red">Login</button>
                         </div>
                         
                         
