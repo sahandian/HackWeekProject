@@ -10,48 +10,11 @@
 
     <title>Create Account</title>
     
-<style>
-    
-    body{
-        background-image: url(StLouis.jpg);
-        background-size: cover;
-    }
-    
-    .login{
-        margin-top: 100px;
-    }
-    
-    .login .card{
-        background: rgba(0, 0, 0, .6);
-    }
-    
-    .login label{
-        font-size: 16px;
-        color: #ccc;
-    }
-    
-    .login input{
-        font-size: 20px !important;
-        color: #fff;
-    }
-    
-    .login button:hover{
-        padding: 0px 40px;
-    }
-    
-    .error {
-  width: 92%; 
-  margin: 0px auto; 
-  padding: 10px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
-  text-align: left;
-}
-</style>
+
+<link rel="stylesheet" href="css.css">
+
 </head>
-<body>
+<body class="registerAndLogin">
 
     <div class="container">
     <div class="row login">

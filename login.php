@@ -35,7 +35,7 @@
     }
 </style>
 </head>
-<body>
+<body class="registerAndLogin">
 
     <div class="container" action="server.php">
     <div class="row login">
