@@ -34,6 +34,17 @@
         font-size: 20px !important;
         color: #fff;
     }
+    
+    .error {
+  width: 92%; 
+  margin: 0px auto; 
+  padding: 10px; 
+  border: 1px solid #a94442; 
+  color: #a94442; 
+  background: #f2dede; 
+  border-radius: 5px; 
+  text-align: left;
+}
 </style>
 </head>
 <body>
@@ -67,7 +78,7 @@
                 </div>
 -->
                 
-    <form class="form" action="server.php" method="post">
+    <form class="form" action="register.php" method="post">
         <?php include('errors.php'); ?>
       <div class="row">
         <div class="input-field col s6 ">
@@ -81,7 +92,7 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" name="email" type="email" class="validate">
+          <input id="email" name="email" type="email" class="validate" value="<?php echo $email; ?>">
           <label for="email">Email</label>
         </div>
       </div>
