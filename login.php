@@ -64,7 +64,11 @@
                             <buttontype="submit" name="login_user" class="btn-large red">Login</button>
                         </div>
                         
+                        
                     </div>
+                    <div class="right-align">
+                        <p class="red white-text">Don't Have an Account?  <a href="register.php">Sign Up </a></p>
+                        </div>
                 </div>
             </form>
         </div>

@@ -35,6 +35,10 @@
         color: #fff;
     }
     
+    .login button:hover{
+        padding: 0px 40px;
+    }
+    
     .error {
   width: 92%; 
   margin: 0px auto; 
@@ -108,10 +112,12 @@
           <label for="confirmpassword">Confirm Password</label>
         </div>
       </div>
-      <div class="form-field center-alignment">
+      <div class="form-field center-align">
         <button type="submit" name="reg_user" class="btn-large red">Submit</button>
       </div>
-    
+      <div class="right-align">
+        <p class="red white-text">Already Have an Account?  <a href="login.php">Login </a></p>
+      </div>
     </form>
             </div>
         </div>
