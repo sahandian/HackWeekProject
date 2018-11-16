@@ -80,4 +80,28 @@ if (isset($_POST['login_user'])) {
   }
 }
 
+if (isset($_POST['add_exp'])) {
+  // receive all input values from the form
+  $expense = mysqli_real_escape_string($db, $_POST['expense']);
+  $amount = mysqli_real_escape_string($db, $_POST['amount']);
+  $email = mysqli_real_escape_string($db, $_SESSION['email']);
+  
+
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+  if (empty($expense)) { array_push($errors, "Expense Type is required"); }
+  if (empty($amount)) { array_push($errors, "Amount is required"); }
+ 
+
+  // Finally, register user if there are no errors in the form
+  if (count($errors) == 0) {
+  	
+
+  	$query = "INSERT INTO expenses (email, type, amount) 
+  			  VALUES('$email','$expense', '$amount')";
+  	mysqli_query($db, $query);
+  	
+  	header('location: index.php');
+  }
+}
 ?>

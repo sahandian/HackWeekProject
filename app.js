@@ -37,13 +37,22 @@ $(document).ready(function(){
 				]
 			};
             
-            
+    
 
 			var ctx = $("#mycanvas");
             var ctx2 = $("#mycanvas2");
 			var barGraph = new Chart(ctx, {
 				type: 'bar',
-				data: chartdata
+				data: chartdata,
+                options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
 			});
             
             var pieGraph = new Chart(ctx2, {

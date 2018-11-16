@@ -1,3 +1,5 @@
+<?php include('server.php') ?>
+
 <?php 
   session_start(); 
 
@@ -16,7 +18,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Parallax Template - Materialize</title>
+  <title>Expense Tracker</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -29,13 +31,24 @@
 				height: auto;
 */
 			}
+    canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    
+}
 		</style>
+ 
 </head>
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
         <a id="logo-container" href="index.php" class="brand-logo">sahand<span class="teal-text"></span><span class="red-text">SADRI</span></a>
-      
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.php?logout='1'" class="btn-large waves-effect waves-light red lighten-1">LOGOUT</a></li>
+      </ul>
 
      
     </div>
@@ -50,7 +63,7 @@
           <h5 class="header col s12 light">What are you really spending your money on?</h5>
         </div>
         <div class="row center">
-          <a href="#" id="download-button" class="btn-large waves-effect waves-light green lighten-1">Add an Expense</a>
+          <a href="#expense" id="download-button" class="btn-large waves-effect waves-light green lighten-1">Add an Expense</a>
         </div>
         <br><br>
 
@@ -59,15 +72,15 @@
     <div class="parallax"><img src="StLouis.jpg" class="responsive-img" alt="Unsplashed background img 1"></div>
   </div>
     <div class="container">
-        <div class="row center-align">
+        <div class="row center">
     
-        <div id="chart-container" class="col s6">
-                    <canvas id="mycanvas"></canvas>
+        <div id="chart-container" class="col s6 ">
+                    <canvas id="mycanvas" class="right-align"></canvas>
         </div>
     
    
-        <div id="chart-container" class="col s6">
-                    <canvas id="mycanvas2"></canvas>
+        <div id="chart-container" class="col s6 ">
+                    <canvas id="mycanvas2" class="center-align"></canvas>
         </div>
 
         </div>
@@ -117,9 +130,41 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="busch.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
+     <div class="container">
+ 
+     <div id="expense" class="row section scrollspy">
+     <div class="col s6">
+         <h1 class="green-text">Add an Expense:</h1>
+         </div>
+    <div class="col s6">
+         <form class="form" action="index.php" method="post">
+             
+              <div class="input-field">
+                <select name="expense">
+                  <option value="" disabled selected>Choose Expense Type</option>
+                  <option value="Rent">Rent</option>
+                  <option value="Utilities">Utilities</option>
+                  <option value="Food">Food</option>
+                    <option value="Alcohol">Alcohol</option>
+                    <option value="Leisure">Leisure</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Medicine">Medicine</option>
+                </select>
+                <label>Expense Type</label>
+              </div><br>
+             <div class="form-field">
+                            <label for ="amount">Amount</label>
+                            <input type="number" name ="amount" id="amount" step=".01">
+            </div><br>
+            <button type="submit" name="add_exp" class="btn-large red">Submit</button>
+        </form>
+         </div>
+         
+     </div>
+ </div>
   
 
 
@@ -155,15 +200,44 @@
 
 
   <!--  Scripts-->
+
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+    <script>
+
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+        
+         document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.scrollspy');
+    var instances = M.ScrollSpy.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });
+    </script>
+<!--
   <script
           src="https://code.jquery.com/jquery-1.12.3.js"
           integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="
           crossorigin="anonymous"></script>
+-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
 		<script type="text/javascript" src="app.js"></script>
+    
+        <script>
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+    </script>
 
   </body>
 </html>
